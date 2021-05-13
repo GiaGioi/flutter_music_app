@@ -132,7 +132,7 @@ class _SearchPageState extends State<SearchPage> {
                             return GestureDetector(
                                 onTap: () {
                                   if (null != data.url) {
-                                    SongModel songModel = Provider.of(context);
+                                    SongModel songModel = Provider.of<SongModel>(context,listen:false);
                                     songModel.setSongs(model.list);
                                     songModel.setCurrentIndex(index);
                                     Navigator.push(

@@ -129,7 +129,7 @@ class _ForYouCarouselState extends State<ForYouCarousel> {
           return GestureDetector(
             onTap: () {
               if (null != data.url) {
-                SongModel songModel = Provider.of(context);
+                SongModel songModel = Provider.of<SongModel>(context,listen:false);
                 songModel.setSongs(new List<Song>.from(widget.forYou));
                 songModel.setCurrentIndex(index);
                 Navigator.push(

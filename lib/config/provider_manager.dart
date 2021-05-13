@@ -4,14 +4,15 @@ import 'package:flutter_music_app/model/local_view_model.dart';
 import 'package:flutter_music_app/model/song_model.dart';
 import 'package:flutter_music_app/model/theme_model.dart';
 import 'package:provider/provider.dart';
+import 'package:provider/single_child_widget.dart';
 
-List<SingleChildCloneableWidget> providers = [
+List<SingleChildWidget> providers = [
   ...independentServices,
   ...uiConsumableProviders
 ];
 
 /// Model
-List<SingleChildCloneableWidget> independentServices = [
+List<SingleChildWidget> independentServices = [
   ChangeNotifierProvider<ThemeModel>(
     create: (context) => ThemeModel(),
   ),
@@ -29,7 +30,7 @@ List<SingleChildCloneableWidget> independentServices = [
   )
 ];
 
-List<SingleChildCloneableWidget> uiConsumableProviders = [
+List<SingleChildWidget> uiConsumableProviders = [
 //  StreamProvider<User>(
 //    builder: (context) => Provider.of<AuthenticationService>(context, listen: false).user,
 //  )

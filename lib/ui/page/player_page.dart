@@ -51,7 +51,7 @@ class _PlayPageState extends State<PlayPage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    SongModel songModel = Provider.of(context);
+    SongModel songModel = Provider.of<SongModel>(context,listen:false);
     DownloadModel downloadModel = Provider.of(context);
     FavoriteModel favouriteModel = Provider.of(context);
     if (songModel.isPlaying) {
